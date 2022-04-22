@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    
+    <!--引入外部属性资源文件-->
+    <properties resource="db.properties"></properties>
+
+    <!--启动懒加载-->
+    <settings>
+        <setting name="lazyLoadingEnabled" value="true"/>
+    </settings>
+    
+    <typeAliases>
+        <!--会将类的名字作为别名（忽略大小写）-->
+        <package name="com.tuling.pojo"></package>
+    </typeAliases>
+
+    <!--数据库环境-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${mysql.driver}"/>
+                <property name="url" value="${mysql.url}"/>
+                <property name="username" value="${mysql.username}"/>
+                <property name="password" value="${mysql.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <package name="com.tuling.dao"></package>
+    </mappers>
+
+</configuration>
