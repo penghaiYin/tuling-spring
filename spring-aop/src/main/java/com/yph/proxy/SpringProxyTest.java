@@ -1,4 +1,4 @@
-package com.yph.test;
+package com.yph.proxy;
 
 import com.yph.service.UserService;
 import org.aopalliance.aop.Advice;
@@ -12,6 +12,7 @@ import java.lang.reflect.Method;
 
 public class SpringProxyTest {
     public static void main(String[] args) {
+        // ProxyFactory Spring提供的可以创建动态代理的工具
         UserService target = new UserService();
         // Spring整合的动态代理
         ProxyFactory proxyFactory = new ProxyFactory();
@@ -58,7 +59,7 @@ public class SpringProxyTest {
             }
         });
         // advice 责任链 + 递归 调用
-//        proxyFactory.getProxy();// 底层会判断生成Cglib或者JDK代理
+//        proxyFactory.getProxy();// 底层如何判断生成Cglib或者JDK代理？
         UserService proxy = (UserService) proxyFactory.getProxy();
         proxy.test2();
     }

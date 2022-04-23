@@ -1,7 +1,7 @@
-package com.yph.test;
+package com.yph.proxy;
 
 import com.yph.UserInterface;
-import com.yph.service.UserServiceImpl;
+import com.yph.service.impl.UserImpl;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -41,7 +41,7 @@ public class ProxyTest {
 //        userService.test2();
 
         // JDK动态代理
-        UserServiceImpl target = new UserServiceImpl();
+        UserImpl target = new UserImpl();
         UserInterface userInterface = (UserInterface) Proxy.newProxyInstance(ProxyTest.class.getClassLoader(), new Class[]{UserInterface.class}, new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {

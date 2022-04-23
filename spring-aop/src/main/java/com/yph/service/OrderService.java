@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class OrderService {
 
     public void test() {
-        System.out.println("test...");
+        System.out.println("orderService test...");
     }
 
 }
