@@ -23,27 +23,27 @@ public class AppConfig {
 //        return autoProxyCreator;
 //    }
 
-//    @Bean
-//    public DefaultPointcutAdvisor defaultPointcutAdvisor() throws IOException {
-//        NameMatchMethodPointcut pointcut = new NameMatchMethodPointcut();
-//        pointcut.addMethodName("test2");
-//
-//        DefaultPointcutAdvisor defaultPointcutAdvisor = new DefaultPointcutAdvisor();
-//        defaultPointcutAdvisor.setPointcut(pointcut);
-//        defaultPointcutAdvisor.setAdvice(new AfterReturningAdvice() {
-//            @Override
-//            public void afterReturning(Object o, Method method, Object[] objects, Object o1) throws Throwable {
-//                System.out.println("after....");
-//            }
-//        });
-//        return defaultPointcutAdvisor;
-//    }
-//
-//    @Bean
-//    public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator() {
-//
-//        DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
-//
-//        return defaultAdvisorAutoProxyCreator;
-//    }
+    @Bean
+    public DefaultPointcutAdvisor defaultPointcutAdvisor() throws IOException {
+        NameMatchMethodPointcut pointcut = new NameMatchMethodPointcut();
+        pointcut.addMethodName("test2");
+
+        DefaultPointcutAdvisor defaultPointcutAdvisor = new DefaultPointcutAdvisor();
+        defaultPointcutAdvisor.setPointcut(pointcut);
+        defaultPointcutAdvisor.setAdvice(new AfterReturningAdvice() {
+            @Override
+            public void afterReturning(Object o, Method method, Object[] objects, Object o1) throws Throwable {
+                System.out.println("after....");
+            }
+        });
+        return defaultPointcutAdvisor;
+    }
+
+    @Bean
+    public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator() {
+
+        DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
+
+        return defaultAdvisorAutoProxyCreator;
+    }
 }
