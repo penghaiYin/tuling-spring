@@ -11,8 +11,11 @@
         <module>spring-mybatis</module>
         <module>spring-aop</module>
         <module>spring-transaction</module>
+        <module>springmvc-spi-demo</module>
+        <module>spring-common</module>
     </modules>
     <packaging>pom</packaging>
+
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -24,6 +27,11 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>5.2.7.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.2.9.RELEASE</version>
         </dependency>
     </dependencies>
 
