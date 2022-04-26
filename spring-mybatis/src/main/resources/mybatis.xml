@@ -14,7 +14,7 @@
     
     <typeAliases>
         <!--会将类的名字作为别名（忽略大小写）-->
-        <package name="com.tuling.pojo"></package>
+        <package name="tuling.pojo"></package>
     </typeAliases>
 
     <!--数据库环境-->
@@ -31,7 +31,7 @@
     </environments>
 
     <mappers>
-        <package name="com.tuling.dao"></package>
+        <package name="tuling.dao"></package>
     </mappers>
 
 </configuration>
